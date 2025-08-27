@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build:
+  build_and_test:
     runs-on: windows-latest
 
     steps:
@@ -19,10 +19,7 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        run: mvn -B clean package -DskipTests
+        run: mvn -B clean package
 
       - name: Run tests with Maven
         run: mvn -B test
-
-
-

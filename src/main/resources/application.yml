@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: curdUsingMongoDB
+    data:
+        mongodb:
+            auto-index-creation: true
+            uri: ${SPRING_DATA_MONGODB_URI:mongodb://localhost:27017/ems}
+    security:
+        user:
+            name: admin
+            password: password
+

@@ -102,6 +102,9 @@ public class EmployeeControllerTest {
         Mockito.verify(employeesService, Mockito.times(1))
                 .getAllDetails();
 
+        Mockito.verify(employeesService, Mockito.times(2))
+                .getAllDetails();
+
     }
 
     @Test

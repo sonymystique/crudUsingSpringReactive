@@ -51,26 +51,27 @@ public class EmployeeControllerTest {
 
     @BeforeEach
     void setUp() {
-        employee = new Employees("2", "name2", "name2@mycompany.com", LocalDateTime.now(), LocalDateTime.now());
-        employeeDto = new EmployeesDto("name2", "name2@mycompany.com", LocalDateTime.now(), LocalDateTime.now());
+        LocalDateTime fixedNow = LocalDateTime.of(2025, 8, 28, 12, 6, 59, 747226100);
+        employee = new Employees("2", "name2", "name2@mycompany.com", fixedNow, fixedNow);
+        employeeDto = new EmployeesDto("name2", "name2@mycompany.com", fixedNow, fixedNow);
 
-        employeesList = List.of(new Employees("0", "name1", "name1@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new Employees("1", "name2", "name2@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new Employees("2", "name3", "name3@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new Employees("3", "name4", "name4@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new Employees("4", "name5", "name5@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new Employees("5", "name6", "name6@mycompany.com",LocalDateTime.now(),LocalDateTime.now())
+        employeesList = List.of(new Employees("0", "name1", "name1@mycompany.com",fixedNow,fixedNow),
+                new Employees("1", "name2", "name2@mycompany.com",fixedNow,fixedNow),
+                new Employees("2", "name3", "name3@mycompany.com",fixedNow,fixedNow),
+                new Employees("3", "name4", "name4@mycompany.com",fixedNow,fixedNow),
+                new Employees("4", "name5", "name5@mycompany.com",fixedNow,fixedNow),
+                new Employees("5", "name6", "name6@mycompany.com",fixedNow,fixedNow)
         );
 
-        employeeDTOList = List.of(new EmployeesDto("name1", "name1@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new EmployeesDto("name2", "name2@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new EmployeesDto( "name3", "name3@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new EmployeesDto( "name4", "name4@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new EmployeesDto( "name5", "name5@mycompany.com",LocalDateTime.now(),LocalDateTime.now()),
-                new EmployeesDto( "name6", "name6@mycompany.com",LocalDateTime.now(),LocalDateTime.now())
+        employeeDTOList = List.of(new EmployeesDto("name1", "name1@mycompany.com",fixedNow,fixedNow),
+                new EmployeesDto("name2", "name2@mycompany.com",fixedNow,fixedNow),
+                new EmployeesDto( "name3", "name3@mycompany.com",fixedNow,fixedNow),
+                new EmployeesDto( "name4", "name4@mycompany.com",fixedNow,fixedNow),
+                new EmployeesDto( "name5", "name5@mycompany.com",fixedNow,fixedNow),
+                new EmployeesDto( "name6", "name6@mycompany.com",fixedNow,fixedNow)
         );
 
-        response = new Response("Employee successfully deleted",LocalDateTime.now(), String.valueOf(HttpStatus.OK.value()));
+        response = new Response("Employee successfully deleted",fixedNow, String.valueOf(HttpStatus.OK.value()));
     }
 
     @Test

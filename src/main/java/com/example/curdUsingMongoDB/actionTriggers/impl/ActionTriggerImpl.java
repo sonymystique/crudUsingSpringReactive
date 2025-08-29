@@ -2,6 +2,7 @@ package com.example.curdUsingMongoDB.actionTriggers.impl;
 
 import com.example.curdUsingMongoDB.actionTriggers.ActionTriggerService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,12 @@ public class ActionTriggerImpl implements ActionTriggerService {
     public ActionTriggerImpl(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder.baseUrl("https://api.github.com").build();
     }
+    public ActionTriggerImpl() {
+
+        this(WebClient.builder());
+    }
+
+
     @Override
     public Mono<Void> triggerWorkflow(String branch, String triggerReason) {
         String url = String.format("/repos/%s/%s/actions/workflows/%s/dispatches",

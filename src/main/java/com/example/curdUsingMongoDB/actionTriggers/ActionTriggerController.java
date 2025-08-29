@@ -2,12 +2,14 @@ package com.example.curdUsingMongoDB.actionTriggers.impl;
 
 import com.example.curdUsingMongoDB.actionTriggers.ActionTriggerService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
-
+@RestController
 @AllArgsConstructor
 public class ActionTriggerController {
 
